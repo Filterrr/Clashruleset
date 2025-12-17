@@ -23,8 +23,8 @@ dns:
     listen: 0.0.0.0:1053
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
-    #use-hosts: true
-    #respect-rules: true
+    use-hosts: false
+    respect-rules: false
     
     default-nameserver:
         - 223.5.5.5
