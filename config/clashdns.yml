@@ -34,3 +34,19 @@ dns:
         - https://doh.pub/dns-query
         - https://dns.alidns.com/dns-query
         - https://doh.360.cn/dns-query
+
+sniffer:
+    enable: true
+    force-dns-mapping: true
+    parse-pure-ip: true  # 处理纯 IP 请求
+    sniff:
+      HTTP:
+        ports: [80, 8080-8880]
+        override-destination: true
+      TLS:
+        ports: [443, 8443]
+      QUIC:
+        ports: [443, 8443]
+    skip-domain:
+      - "Mijia Cloud"
+      - "+.push.apple.com"
