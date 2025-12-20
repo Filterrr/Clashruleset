@@ -29,14 +29,16 @@ dns:
   default-nameserver:
     - tls://223.5.5.5
   nameserver:
-    - https://doh.360.cn#☁️ 全球直连
-    - https://doh.pub/dns-query#☁️ 全球直连
+    - https://doh.360.cn
+    - https://doh.pub/dns-query
   fallback:
-    - tls://8.8.4.4#⚖️ 故障转移
-    - tls://1.1.1.1#⚖️ 故障转移
+    - tls://8.8.4.4
+    - tls://1.1.1.1
   fallback-filter:
     geoip: true
     geoip-code: CN
+    geosite:
+      - gfw
     
 sniffer:
   enable: true
