@@ -17,36 +17,39 @@ asn: >-
     https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
 
 dns:
-    enable: true
-    ipv6: false
-    cache-algorithm: arc
-    listen: 0.0.0.0:1053
-    enhanced-mode: fake-ip
-    fake-ip-range: 198.18.0.1/16
-    use-hosts: false
-    respect-rules: false
+  enable: true
+  cache-algorithm: arc
+  ipv6: false
+  listen: 0.0.0.0:1053
+  use-hosts: false
+  use-system-hosts: false
+  enhanced-mode: fake-ip
+  respect-rules: false
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+    - tls://223.5.5.5
+  nameserver:
+    - https://doh.360.cn#🇨🇳 国内节点
+    - https://doh.pub/dns-query#🇨🇳 国内节点
+  fallback:
+    - tls://8.8.4.4#⚡️ 故障转移
+    - tls://1.1.1.1#⚡️ 故障转移
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
     
-    default-nameserver:
-        - 223.5.5.5
-        - 119.29.29.29
-    
-    nameserver:
-        - https://doh.pub/dns-query
-        - https://dns.alidns.com/dns-query
-        - https://doh.360.cn/dns-query
-
 sniffer:
-    enable: true
-    force-dns-mapping: true
-    parse-pure-ip: true  # 处理纯 IP 请求
-    sniff:
-      HTTP:
-        ports: [80, 8080-8880]
-        override-destination: true
-      TLS:
-        ports: [443, 8443]
-      QUIC:
-        ports: [443, 8443]
-    skip-domain:
-      - "Mijia Cloud"
-      - "+.push.apple.com"
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true  # 处理纯 IP 请求
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  skip-domain:
+    - "Mijia Cloud"
+    - "+.push.apple.com"
