@@ -41,7 +41,7 @@ dns:
       - gfw
     
 sniffer:
-  enable: true
+  enable: false
   force-dns-mapping: true
   parse-pure-ip: true  # 处理纯 IP 请求
   sniff:
@@ -52,6 +52,5 @@ sniffer:
       ports: [443, 8443]
     QUIC:
       ports: [443, 8443]
-  skip-domain:
-    - "Mijia Cloud"
-    - "+.push.apple.com"
+
+      
