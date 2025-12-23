@@ -53,4 +53,18 @@ sniffer:
     QUIC:
       ports: [443, 8443]
 
-      
+tun:
+  enable: true
+  stack: gvisor
+  auto-route: true
+  auto-redirect: false
+  auto-detect-interface: true
+  dns-hijack:
+    - 0.0.0.0:53
+    - 0.0.0.0:853
+    - tcp://0.0.0.0:53
+  device: ClashMeta1
+  mtu: 9000
+  strict-route: true
+  udp-timeout: 300
+
