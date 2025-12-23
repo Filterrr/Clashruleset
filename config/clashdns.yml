@@ -41,7 +41,7 @@ dns:
       - gfw
     
 sniffer:
-  enable: false
+  enable: true
   force-dns-mapping: true
   parse-pure-ip: true  # 处理纯 IP 请求
   sniff:
