@@ -30,7 +30,8 @@ dns:
   listen: 0.0.0.0:1053
   use-hosts: false
   use-system-hosts: false
-  enhanced-mode: fake-ip
+#  enhanced-mode: fake-ip
+  enhanced-mode: redir-host
   respect-rules: true
   fake-ip-ttl: 1
   fake-ip-range: 198.18.0.1/16
@@ -40,14 +41,17 @@ dns:
   nameserver:
     - https://doh.360.cn
     - https://doh.pub/dns-query
+    - https://1.0.0.1/dns-query
   fallback:
-    - tls://8.8.8.8
-    - tls://1.1.1.1
+    - https://1.0.0.1/dns-query
+    - https://1.1.1.1/dns-query
   proxy-server-nameserver:
     - https://doh.360.cn
+    - https://1.0.0.1/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
+
     
 sniffer:
   enable: true
