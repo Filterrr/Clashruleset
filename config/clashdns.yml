@@ -30,8 +30,8 @@ dns:
   listen: 0.0.0.0:1053
   use-hosts: false
   use-system-hosts: false
-#  enhanced-mode: fake-ip
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
+ # enhanced-mode: redir-host
   respect-rules: true
   fake-ip-ttl: 1
   fake-ip-range: 198.18.0.1/16
