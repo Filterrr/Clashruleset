@@ -24,6 +24,7 @@ asn: >-
     https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
 
 dns:
+dns:
   enable: true
   cache-algorithm: arc
   ipv6: false
@@ -42,6 +43,10 @@ dns:
     - tls://223.6.6.6#🇨🇳 国内节点
     - tls://dot.pub#🇨🇳 国内节点
   proxy-server-nameserver:
+    - tls://223.6.6.6#🇨🇳 国内节点
+    - tls://dot.pub#🇨🇳 国内节点
+  nameserver-policy:
+    'geosite:cn':
     - tls://223.6.6.6#🇨🇳 国内节点
     - tls://dot.pub#🇨🇳 国内节点
     
