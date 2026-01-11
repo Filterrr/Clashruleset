@@ -41,13 +41,11 @@ dns:
   nameserver:
     - https://doh.360.cn
     - https://doh.pub/dns-query
-    - https://1.0.0.1/dns-query
   fallback:
     - https://1.0.0.1/dns-query
     - https://1.1.1.1/dns-query
   proxy-server-nameserver:
     - https://doh.360.cn
-    - https://1.0.0.1/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
