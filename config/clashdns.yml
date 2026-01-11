@@ -33,23 +33,17 @@ dns:
   enhanced-mode: fake-ip
  # enhanced-mode: redir-host
   respect-rules: true
-  fake-ip-ttl: 1
+  fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
-    - tls://223.5.5.5
-    - tls://223.6.6.6
+    - 223.6.6.6#🇨🇳 国内节点
+    - 223.5.5.5#🇨🇳 国内节点
   nameserver:
-    - https://doh.360.cn
-    - https://doh.pub/dns-query
-  fallback:
-    - https://1.0.0.1/dns-query
-    - https://1.1.1.1/dns-query
+    - tls://223.6.6.6#🇨🇳 国内节点
+    - tls://dot.pub#🇨🇳 国内节点
   proxy-server-nameserver:
-    - https://doh.360.cn
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-
+    - tls://223.6.6.6#🇨🇳 国内节点
+    - tls://dot.pub#🇨🇳 国内节点
     
 sniffer:
   enable: true
