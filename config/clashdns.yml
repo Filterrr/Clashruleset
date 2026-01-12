@@ -36,18 +36,18 @@ dns:
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
-    - 223.6.6.6#🇨🇳 国内节点
-    - 223.5.5.5#🇨🇳 国内节点
+    - 119.29.29.29
+    - 223.5.5.5
   nameserver:
-    - tls://223.6.6.6#🇨🇳 国内节点
-    - tls://dot.pub#🇨🇳 国内节点
+    - tls://223.6.6.6
+    - tls://dot.pub
   proxy-server-nameserver:
-    - tls://223.6.6.6#🇨🇳 国内节点
-    - tls://dot.pub#🇨🇳 国内节点
+    - tls://223.6.6.6
+    - tls://dot.pub
   nameserver-policy:
     'geosite:cn':
-    - tls://223.6.6.6#🇨🇳 国内节点
-    - tls://dot.pub#🇨🇳 国内节点
+    - tls://223.6.6.6
+    - tls://dot.pub
     
 sniffer:
   enable: true
