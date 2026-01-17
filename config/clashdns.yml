@@ -31,23 +31,21 @@ dns:
   use-hosts: false
   use-system-hosts: false
   enhanced-mode: fake-ip
- # enhanced-mode: redir-host
   respect-rules: true
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
+    - tls://223.5.5.5
   nameserver:
-    - tls://223.6.6.6
-    - tls://dot.pub
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   proxy-server-nameserver:
-    - tls://223.6.6.6
-    - tls://dot.pub
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   nameserver-policy:
     'geosite:cn':
-    - tls://223.6.6.6
-    - tls://dot.pub
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
     
 sniffer:
   enable: true
