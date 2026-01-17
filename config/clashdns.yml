@@ -3,7 +3,7 @@ allow-lan: true
 bind-address: "*"
 mode: rule
 log-level: info
-ipv6: false
+ipv6: true
 keep-alive-interval: 30
 keep-alive-idle: 60
 disable-keep-alive: true
