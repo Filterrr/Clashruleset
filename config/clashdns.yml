@@ -60,3 +60,9 @@ sniffer:
     QUIC:
       ports: [443, 8443]
 
+tun:
+  enable: false
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  strict-route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问
