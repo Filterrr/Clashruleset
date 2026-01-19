@@ -62,7 +62,7 @@ sniffer:
 
 tun:
   enable: true
-  stack: mixed
+  stack: system
   strict-route: true
   auto-route: true
   dns-hijack:
