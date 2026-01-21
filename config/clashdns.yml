@@ -35,17 +35,18 @@ dns:
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
-    - tls://223.5.5.5
+    - tcp://119.29.29.29
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - tcp://119.29.29.29
+    - tcp://119.28.28.28
+    - tcp://223.5.5.5
   proxy-server-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - tcp://119.29.29.29
+    - tcp://119.28.28.28
+    - tcp://223.5.5.5
   nameserver-policy:
-    'geosite:cn':
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    'geosite:cn': [tcp://119.29.29.29, tcp://119.28.28.28, tcp://223.5.5.5, tcp://223.6.6.6]
+    'geosite:geolocation-!cn': [tcp://1.1.1.1, tcp://8.8.8.8]
     
 sniffer:
   enable: true
