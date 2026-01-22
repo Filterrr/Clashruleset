@@ -34,19 +34,12 @@ dns:
   respect-rules: true
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
-  default-nameserver:
-    - tcp://119.29.29.29
-  nameserver:
-    - tcp://119.29.29.29
-    - tcp://119.28.28.28
-    - tcp://223.5.5.5
-  proxy-server-nameserver:
-    - tcp://119.29.29.29
-    - tcp://119.28.28.28
-    - tcp://223.5.5.5
+  default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
+  nameserver: [https://doh.360.cn]
+  proxy-server-nameserver: [https://doh.360.cn]
   nameserver-policy:
-    'geosite:cn': [tcp://119.29.29.29, tcp://119.28.28.28, tcp://223.5.5.5, tcp://223.6.6.6]
-    'geosite:geolocation-!cn': [tcp://1.1.1.1, tcp://8.8.8.8]
+    'geosite:cn': [https://doh.360.cn]
+    'geosite:geolocation-!cn': [tcp://1.1.1.1#⚖️ 故障转移, tcp://8.8.8.8#⚖️ 故障转移]
     
 sniffer:
   enable: true
