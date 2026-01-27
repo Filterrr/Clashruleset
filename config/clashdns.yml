@@ -30,17 +30,19 @@ dns:
   listen: 0.0.0.0:1053
   use-hosts: false
   use-system-hosts: false
- # enhanced-mode: fake-ip
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
+#  enhanced-mode: redir-host
   respect-rules: true
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
-  nameserver: [https://doh.360.cn]
-  proxy-server-nameserver: [https://doh.360.cn]
+  nameserver: [tcp://180.184.1.1, tcp://114.114.114.114]
+  proxy-server-nameserver: [tcp://180.184.1.1, tcp://114.114.114.114]
   nameserver-policy:
-    'geosite:cn': [https://doh.360.cn]
-    'geosite:geolocation-!cn': [tcp://1.1.1.1#⚖️ 故障转移, tcp://8.8.8.8#⚖️ 故障转移]
+    'rule-set:reject': [rcode://success]
+    'geosite:category-ads-all': [rcode://success]
+    'rule-set:direct': [tcp://180.184.1.1, tcp://114.114.114.114]
+    'geosite:geolocation-!cn': [tcp://8.8.8.8, tcp://119.29.29.29]
     
 sniffer:
   enable: true
