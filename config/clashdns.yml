@@ -39,7 +39,6 @@ dns:
   nameserver: [tcp://180.184.1.1, tcp://114.114.114.114]
   proxy-server-nameserver: [tcp://180.184.1.1, tcp://114.114.114.114]
   nameserver-policy:
-    'rule-set:reject': [rcode://success]
     'geosite:category-ads-all': [rcode://success]
     'rule-set:direct': [tcp://180.184.1.1, tcp://114.114.114.114]
     'geosite:geolocation-!cn': [tcp://8.8.8.8, tcp://119.29.29.29]
