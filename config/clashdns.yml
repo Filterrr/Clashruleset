@@ -36,12 +36,12 @@ dns:
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
-  nameserver: [tcp://180.184.1.1, tcp://114.114.114.114]
-  proxy-server-nameserver: [tcp://180.184.1.1, tcp://114.114.114.114]
+  nameserver: [system://, https://doh.360.cn/dns-query, tcp://114.114.114.114]
+  proxy-server-nameserver: [system://, https://doh.360.cn/dns-query, tcp://114.114.114.114]
   nameserver-policy:
     'geosite:category-ads-all': [rcode://success]
-    'geosite:cn': [tcp://180.184.1.1, tcp://114.114.114.114]
-    'geosite:geolocation-!cn': [tcp://8.8.8.8, tcp://119.29.29.29]
+    'geosite:cn': [system://, https://doh.360.cn/dns-query, tcp://114.114.114.114]
+    '+.*': [tcp://8.8.8.8, tcp://119.29.29.29]
     
 sniffer:
   enable: true
