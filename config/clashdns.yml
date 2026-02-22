@@ -11,8 +11,7 @@ unified-delay: true
 global-client-fingerprint: firefox
 geodata-mode: false
 geodata-loader: memconservative
-tcp-concurrent: false
-external-controller: '127.0.0.1:9090'
+tcp-concurrent: true
 
 geoip: >-
     https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
@@ -31,16 +30,15 @@ dns:
   use-hosts: true
   use-system-hosts: true
   enhanced-mode: fake-ip
-#  enhanced-mode: redir-host
   respect-rules: true
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
-  nameserver: [system://, https://doh.360.cn/dns-query, tcp://114.114.114.114]
-  proxy-server-nameserver: [system://, https://doh.360.cn/dns-query, tcp://114.114.114.114]
+  nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
+  proxy-server-nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
   nameserver-policy:
     'geosite:category-ads-all': [rcode://success]
-    'geosite:cn': [system://, https://doh.360.cn/dns-query, tcp://114.114.114.114]
+    'geosite:cn': [https://doh.360.cn/dns-query, tcp://114.114.114.114]
     '+.*': [tcp://8.8.8.8, tcp://119.29.29.29]
     
 sniffer:
