@@ -1,3 +1,7 @@
+default_dns: &default_dns [tcp://180.184.2.2, tcp://119.29.29.29]
+direct_dns: &direct_dns [https://doh.360.cn/dns-query, tcp://223.5.5.5]
+proxy_dns: &proxy_dns [tcp://94.140.14.14, tcp://1.0.0.1, tcp://8.8.8.8]
+
 mixed-port: 7890
 allow-lan: true
 bind-address: "*"
@@ -27,19 +31,16 @@ dns:
   cache-algorithm: arc
   ipv6: false
   listen: 0.0.0.0:1053
-  use-hosts: true
-  use-system-hosts: true
-  enhanced-mode: fake-ip
-  respect-rules: true
-  fake-ip-ttl: 60
+  enhanced-mode: redir-host
+  respect-rules: false
+  fake-ip-ttl: 15
   fake-ip-range: 198.18.0.1/16
-  default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
-  nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
-  proxy-server-nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
+  default-nameserver: *default_dns
+  nameserver: *direct_dns
+  proxy-server-nameserver: *direct_dns
   nameserver-policy:
-    'geosite:category-ads-all': [rcode://success]
-    'geosite:cn': [https://doh.360.cn/dns-query, tcp://114.114.114.114]
-    '+.*': [tcp://8.8.8.8, tcp://119.29.29.29]
+    'GEOSITE:CN': *direct_dns
+    '+.*': *proxy_dns
     
 sniffer:
   enable: true
