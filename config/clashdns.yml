@@ -31,7 +31,7 @@ dns:
   cache-algorithm: arc
   ipv6: false
   listen: 0.0.0.0:1053
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   respect-rules: false
   fake-ip-ttl: 15
   fake-ip-range: 198.18.0.1/16
