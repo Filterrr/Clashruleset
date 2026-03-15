@@ -1,4 +1,3 @@
-
 mixed-port: 7890
 allow-lan: true
 bind-address: "*"
@@ -10,7 +9,7 @@ keep-alive-idle: 60
 disable-keep-alive: true
 unified-delay: true
 global-client-fingerprint: firefox
-geodata-mode: true
+geodata-mode: false
 geodata-loader: memconservative
 tcp-concurrent: true
 
@@ -40,7 +39,7 @@ dns:
   nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
   proxy-server-nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
   nameserver-policy:
-    'geosite:cn': [https://doh.360.cn/dns-query, tcp://114.114.114.114]
+    'geosite:cn,private': [https://doh.360.cn/dns-query, tcp://114.114.114.114]
     '+.*': [tcp://8.8.8.8, tcp://1.1.1.1]
 
 
