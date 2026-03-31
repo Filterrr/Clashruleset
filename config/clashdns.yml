@@ -36,10 +36,10 @@ dns:
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
-  nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
-  proxy-server-nameserver: [https://doh.360.cn/dns-query, tcp://114.114.114.114]
+  nameserver: [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
+  proxy-server-nameserver: [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
   nameserver-policy:
-    'geosite:cn,private': [https://doh.360.cn/dns-query, tcp://114.114.114.114]
+    'geosite:cn,private': [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
     '+.*': [tcp://8.8.8.8, tcp://1.1.1.1]
 
 
@@ -59,7 +59,6 @@ sniffer:
 rule-providers:
     BanAD:
       type: http
-      proxy: ⚡️ 故障转移
       format: mrs
       behavior: domain                        
       url: https://raw.githubusercontent.com/Filterrr/AdBlock_Rule_For_Clash/main/adblock_reject.mrs
