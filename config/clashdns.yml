@@ -41,28 +41,3 @@ dns:
   nameserver-policy:
     'geosite:cn,private': [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
     '+.*': [tcp://8.8.8.8, tcp://1.1.1.1]
-
-
-sniffer:
-  enable: true
-  force-dns-mapping: true
-  parse-pure-ip: true
-  sniff:
-    HTTP:
-      ports: [80, 1024-65535]
-      override-destination: true
-    TLS:
-      ports: [443, 8443]
-    QUIC:
-      ports: [443, 8443]
-
-rule-providers:
-    BanAD:
-      type: http
-      format: mrs
-      behavior: domain                        
-      url: https://raw.githubusercontent.com/Filterrr/AdBlock_Rule_For_Clash/main/adblock_reject.mrs
-      path: ./adblock_reject.mrs
-      interval: 864000
-
-      
