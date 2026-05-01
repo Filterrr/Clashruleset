@@ -32,12 +32,11 @@ dns:
   use-hosts: true
   use-system-hosts: true
   enhanced-mode: fake-ip
-  respect-rules: true
+  respect-rules: false
   fake-ip-ttl: 60
   fake-ip-range: 198.18.0.1/16
   default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
   nameserver: [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
-  proxy-server-nameserver: [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
   nameserver-policy:
     'geosite:cn,private': [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
     '+.*': [tcp://8.8.8.8, tcp://1.1.1.1]
