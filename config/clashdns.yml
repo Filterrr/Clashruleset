@@ -40,3 +40,15 @@ dns:
   nameserver-policy:
     'geosite:cn,private': [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
     '+.*': [tcp://8.8.8.8, tcp://1.1.1.1]
+
+tun:
+  enable: false
+  stack: gvisor
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  strict-route: true
+  auto-route: true
+  auto-detect-interface: true
+  mtu: 9000
+  include-android-user: [0, 10, 999]
