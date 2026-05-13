@@ -9,7 +9,7 @@ keep-alive-idle: 60
 disable-keep-alive: true
 unified-delay: true
 global-client-fingerprint: firefox
-geodata-mode: false
+geodata-mode: true
 geodata-loader: memconservative
 tcp-concurrent: true
 
@@ -38,7 +38,7 @@ dns:
   default-nameserver: [tcp://119.29.29.29, tcp://223.5.5.5]
   nameserver: [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
   nameserver-policy:
-    'geosite:cn,private': [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
+    'geosite:cn': [tls://223.6.6.6, tls://120.53.53.53, tls://223.5.5.5]
     '+.*': [tcp://8.8.8.8, tcp://1.1.1.1]
 
 tun:
