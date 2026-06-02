@@ -8,7 +8,7 @@ keep-alive-interval: 30
 keep-alive-idle: 60
 disable-keep-alive: true
 unified-delay: true
-global-client-fingerprint: firefox
+# global-client-fingerprint: firefox
 geodata-mode: true
 geodata-loader: memconservative
 tcp-concurrent: true
