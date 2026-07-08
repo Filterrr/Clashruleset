@@ -1,5 +1,3 @@
-# ：Desktop or Mobile推荐软件：https://github.com/Filterrr/FlClash
-# -------------------------------------------
 mixed-port: 7890
 allow-lan: true
 bind-address: "*"
